@@ -14,6 +14,7 @@ import mediapipe as mp
 from utils import CvFpsCalc
 from model import KeyPointClassifier
 
+import test
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -31,17 +32,17 @@ def get_args():
                         help='min_tracking_confidence',
                         type=int,
                         default=0.5)
-    
+
     parser.add_argument("--video_source",
                         help="the location of input video (default: front_camera)",
                         type=str,
                         default='front_camera')
-        
+
     parser.add_argument("--output_frame",
                         help="Output one classfied result for every X frames (default 1)",
                         type=int,
                         default=1)
-    
+
     args = parser.parse_args()
 
     return args
@@ -149,7 +150,7 @@ def main():
                     elif not(found_left_hand):
                         found_left_hand = True
                         output_result_left.append(keypoint_classifier_labels[hand_sign_id])
-                
+
                 # Drawing part
                 debug_image = draw_bounding_rect(use_brect, debug_image, brect)
                 debug_image = draw_landmarks(debug_image, landmark_list)
@@ -159,13 +160,13 @@ def main():
                     handedness,
                     keypoint_classifier_labels[hand_sign_id]
                 )
-        
+
         if output_this_frame:
             if not(found_right_hand):
                 output_result_right.append('X')
             if not(found_left_hand):
                 output_result_left.append('X')
-        
+
         debug_image = draw_info(debug_image, fps, mode, number)
 
         # Screen reflection #############################################################
@@ -174,6 +175,7 @@ def main():
 
     cap.release()
     cv.destroyAllWindows()
+
     with open('result.csv', 'w') as f:
         f.write('L: ')
         for data in output_result_left:
@@ -183,6 +185,8 @@ def main():
         for data in output_result_right:
             f.write(data + ' ')
         f.write('\n')
+
+    test.test()
 
 
 def select_mode(key, mode):
