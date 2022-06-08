@@ -31,14 +31,14 @@ def test():
             lag=0
             list.clear()
             list.append("star")
-        elif (time_limit>75):#540手勢開始後，若超過15秒，則下輪回歸初始值(舉例：5~4~一直持續到高過15秒)
+        elif (time_limit>50):#540手勢開始後，若超過約10秒，則下輪回歸初始值(舉例：5~4~0到比完中間到約超過10秒)
             tmp = 3
         elif ((check_4 >= 2) and (array[0][i] == "0" or array[1][i] == "0")):#判定check_4大於等於2(只有一幀可能為誤判)且下個手勢為零
             check_0 +=1
             time_limit += 1
             if(check_0 >=2 ):#手勢為零之值取得滿兩幀，則回歸為初始值
                 count += 1#紀錄有幾次hit不須重整為0
-                print('hit:'+ str(count))
+                print('hit:'+ str(count)+" spend time:"+str(time_limit/5)+"s")
                 check_5 = 0
                 check_4 = 0
                 check_0 = 0
