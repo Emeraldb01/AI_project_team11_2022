@@ -1,3 +1,5 @@
 mediapipe
 opencv-contrib-python
 tensorflow
+pandas
+numpy

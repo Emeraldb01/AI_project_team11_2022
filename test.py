@@ -84,6 +84,9 @@ def test():
     elif(count==0):
         print('Safe!')
 
-
-
+    # 回傳偵測結果
+    if count > 0:
+        return True
+    else:
+        return False
 

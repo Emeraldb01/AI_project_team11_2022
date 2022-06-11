@@ -41,7 +41,7 @@ def get_args():
     parser.add_argument("--output_frame",
                         help="Output one classfied result for every X frames (default 1)",
                         type=int,
-                        default=1)
+                        default=5)
 
     args = parser.parse_args()
 
@@ -95,7 +95,8 @@ def main():
     # FPS Measurement ########################################################
     cvFpsCalc = CvFpsCalc(buffer_len=10)
 
-    #  ########################################################################
+
+    # Initialize variables and list
     mode = 0
     cur_frame_count = 0
     output_result_left = []
@@ -118,12 +119,12 @@ def main():
 
         # Detection implementation #############################################################
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True
 
-        #  ####################################################################
+        # Processing the data from mediapipe, and use it to classify ##################
+        # Initialize variables
         found_right_hand = False
         found_left_hand = False
         if results.multi_hand_landmarks is not None:
@@ -143,6 +144,7 @@ def main():
                 # Hand sign classification
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
 
+                # If this frame should be output, and the current hand haven't be found
                 if output_this_frame:
                     if not(found_right_hand) and handedness.classification[0].label[0:] == 'Right':
                         found_right_hand = True
@@ -160,7 +162,8 @@ def main():
                     handedness,
                     keypoint_classifier_labels[hand_sign_id]
                 )
-
+        
+        # If this frame should be output, and there're some hands not found by above procedure.
         if output_this_frame:
             if not(found_right_hand):
                 output_result_right.append('X')
@@ -171,11 +174,14 @@ def main():
 
         # Screen reflection #############################################################
         cv.imshow('Hand Gesture Recognition', debug_image)
+
+        # Update the frame_count
         cur_frame_count += 1
 
     cap.release()
     cv.destroyAllWindows()
 
+    # Write result list to result.csv
     with open('result.csv', 'w') as f:
         f.write('L: ')
         for data in output_result_left:
@@ -186,7 +192,10 @@ def main():
             f.write(data + ' ')
         f.write('\n')
 
-    test.test()
+    # Get the 5-4-0 prediction result from test.test()
+    classified_result = 'Y' if test.test() else 'N'
+    # Output the result for current video
+    print(f'Result = {classified_result}')
 
 
 def select_mode(key, mode):
