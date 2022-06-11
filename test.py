@@ -21,7 +21,9 @@ def test():
     list.append("star")
     lag = 0#觸發540手勢後，在某數字的空窗期計數
     warn = False#警告觸發
+    occur = 0
     for i in range(0, len(array[0]) - 1, ):
+        occur += 1#發生hit時機
         if (tmp >= 3):#非預期狀況記數超過3，則回歸初始值
             check_5 = 0
             check_4 = 0
@@ -38,7 +40,7 @@ def test():
             time_limit += 1
             if(check_0 >=2 ):#手勢為零之值取得滿兩幀，則回歸為初始值
                 count += 1#紀錄有幾次hit不須重整為0
-                print('hit:'+ str(count)+" spend time:"+str(time_limit/5)+"s")
+                print('hit:'+ str(count)+" Time of occurrence:"+str(round(occur*0.20833,2))+"s"+" spend time:"+str(round(time_limit*0.20833,2))+"s")
                 check_5 = 0
                 check_4 = 0
                 check_0 = 0
