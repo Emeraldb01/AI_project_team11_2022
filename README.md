@@ -11,9 +11,14 @@ pip install -r requirements.txt
 
 ## 檔案說明
 ### app.py
+
 可使用前鏡頭或單一影片進行測試，在執行過程中會有視窗畫面，可以即時了解當前所辨認之手勢。
+
+---
 ### app_for_testing.py
 一次對整個資料夾的影片進行測試，執行過程為了節省效能，不會有額外的視窗畫面。
+
+
 
 ## 使用方法
 ### app.py
@@ -28,6 +33,8 @@ python app.py --video_source ./video.mp4 --output_frame 5
 * --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
 
 過程中若要退出，在視窗中按下Esc即可
+
+---
 
 ### app_for_testing.py
 範例:
@@ -50,6 +57,8 @@ Result = Y
 * Result的結果只會有2種，{Y, N}，代表的意思為：
     - Y: 有偵測出5-4-0。
     - N: 沒有偵測出5-4-0。
+
+---
 
 ### app_for_testing.py
 範例：
