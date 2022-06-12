@@ -18,6 +18,12 @@ pip install -r requirements.txt
 ### app_for_testing.py
 一次對整個資料夾的影片進行測試，執行過程為了節省效能，不會有額外的視窗畫面。
 
+---
+### baseline.ipynb
+將整個project folder upload至google drive，由內打開該檔案，應可以直接執行
+或是至 AI_project_team11_2022/model/keypoint_classifier/ 中，下載"keypoint.csv"並上傳至drive，更改cell 2之路徑，即可執行
+
+將會用我們的dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
 
 
 ## 使用方法
