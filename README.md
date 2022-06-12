@@ -58,13 +58,6 @@ python app_for_testing.py --video_dir 10_sec_no
 
 * --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
 
----
-### baseline.ipynb
-用dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
-
-將整個project folder upload至google drive，由內打開該檔案，應可以直接執行
-或是至 AI_project_team11_2022/model/keypoint_classifier/ 中，下載"keypoint.csv"並上傳至drive，更改cell 2之路徑，即可執行
-
 
 ## 輸出
 ### app.py
