@@ -23,11 +23,6 @@ pip install -r requirements.txt
 ### test.py
 使用整支影片所判斷出的個別手勢資訊（array of 5, 4, 0, N），判斷是否包含連續的540手勢，會被app及app_for_test呼叫
 
-
----
-### baseline.ipynb
-用dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
-
 ---
 ### 10_sec_yes
 test data: 10秒且有540手勢之影片共四十部
@@ -64,8 +59,9 @@ python app_for_testing.py --video_dir 10_sec_no
 * --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
 
 ### baseline.ipynb
-將整個project folder upload至google drive，由內打開該檔案，應可以直接執行
+用dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
 
+將整個project folder upload至google drive，由內打開該檔案，應可以直接執行
 或是至 AI_project_team11_2022/model/keypoint_classifier/ 中，下載"keypoint.csv"並上傳至drive，更改cell 2之路徑，即可執行
 
 
