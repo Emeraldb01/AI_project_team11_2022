@@ -18,6 +18,12 @@ pip install -r requirements.txt
 ### app_for_testing.py
 一次對整個資料夾的影片進行測試，執行過程為了節省效能，不會有額外的視窗畫面。
 
+
+---
+### test.py
+使用整支影片所判斷出的個別手勢資訊（array of 5, 4, 0, N），判斷是否包含連續的540手勢，會被app及app_for_test呼叫
+
+
 ---
 ### baseline.ipynb
 用dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
@@ -29,11 +35,6 @@ test data: 10秒且有540手勢之影片共四十部
 ---
 ### 10_sec_no
 test data: 10秒且沒有540手勢之影片共四十部
-
----
-### test.py
-使用整支影片所判斷出的個別手勢資訊（array of 5, 4, 0, N），判斷是否包含連續的540手勢，會被app及app_for_test呼叫
-
 
 ## 使用方法
 ### app.py
