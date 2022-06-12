@@ -31,6 +31,10 @@ test data: 10秒且有540手勢之影片共四十部
 ### 10_sec_no
 test data: 10秒且沒有540手勢之影片共四十部
 
+---
+30秒的test data 可由以下連結下載：https://drive.google.com/drive/folders/1g2w5Qxhu-ea007MQFYhMKN2DXqWD1VVc?usp=sharing
+
+
 ## 使用方法
 ### app.py
 範例:
