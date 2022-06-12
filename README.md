@@ -58,6 +58,7 @@ python app_for_testing.py --video_dir 10_sec_no
 
 * --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
 
+---
 ### baseline.ipynb
 用dataset train兩個baseline model，並輸出各手勢分別正確率及整體正確率
 
