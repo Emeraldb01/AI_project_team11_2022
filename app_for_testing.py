@@ -93,14 +93,23 @@ def main():
 
         # Loop through the whole video
         while cap.isOpened():
-            output_this_frame = True if cur_frame_count % output_frame == 0 else False
             ret, image = cap.read()
             if not ret:
                 break
+            output_this_frame = True if cur_frame_count % output_frame == 0 else False
+
+            # Update the frame_count
+            cur_frame_count += 1
+
+            # If this frame is not necessary, just skip it.
+            if not output_this_frame:
+                continue
+
+            # Detection implementation ####################################################
             image = cv.flip(image, 1)  # Mirror display
             debug_image = copy.deepcopy(image)
 
-            # Detection implementation ####################################################
+            
             image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
             image.flags.writeable = False
             results = hands.process(image)
@@ -141,8 +150,6 @@ def main():
                 if not(found_left_hand):
                     output_result_left.append('X')
 
-            # Update the frame_count
-            cur_frame_count += 1
 
         cap.release()
         

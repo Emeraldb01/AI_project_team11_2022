@@ -3,6 +3,7 @@ import pandas as pd
 from csv import reader
 from csv import writer
 import numpy as np
+import os
 from numpy import genfromtxt
 
 
@@ -84,6 +85,9 @@ def test():
     elif(count==0):
         print('Safe!')
 
+    # 刪除使用完的資料
+    os.remove('result.csv')
+    
     # 回傳偵測結果
     if count > 0:
         return True
