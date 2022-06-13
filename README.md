@@ -22,7 +22,7 @@ pip install -r requirements.txt
 ### `test.py`
 使用整支影片所辨認出的個別手勢資訊（array of {5, 4, 0, N, X} ），判斷是否包含連續的5-4-0手勢。
 
-會被`app.py`及`app_for_testing.py`呼叫
+會被`app.py`及`app_for_testing.py`呼叫。
 
 ---
 ### `10_sec_yes`
@@ -47,11 +47,11 @@ pip install -r requirements.txt
 python app.py --video_source ./video.mp4 --output_frame 5
 ```
 
-* --video_source <影片位置>: 若沒有指定arg，則使用電腦鏡頭
+* --video_source <影片位置>: 若沒有指定arg，則使用電腦鏡頭。
 
-* --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
+* --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀。
 
-過程中若要退出，在視窗中按下Esc即可
+過程中若要退出，在視窗中按下Esc即可。
 
 ---
 
@@ -64,7 +64,7 @@ python app_for_testing.py --video_dir 10_sec_no
 
 * --video_dir <包含影片的資料夾位置>: 資料夾的名稱最後一定要標明 yes 或是 no，如同範例所寫的格式。
 
-* --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀
+* --output_frame <想要每幾幀紀錄一個手勢>: 若沒有指定arg，則每五幀紀錄一幀。
 
 
 ## 輸出
@@ -90,10 +90,11 @@ Result = N
 * 另有可能出現的輸出為：
 	- `hit{x}: Time of occurrence: {t1}s spend time:{t2}s`
 		- x: 這是該部影片第x次出現5-4-0手勢。
-		- t1: 該次手勢出現在影片第t1秒
-		- t2: 該次手勢總共花了t2秒比完
-	- `Attention!`: 若該部影片偵測到 >= 3次5-4-0手勢，表示此人高機率在密集求助，需注意。
+		- t1: 該次手勢出現在影片第t1秒。
+		- t2: 該次手勢總共花了t2秒比完。
+	- `Attention!`: 若該部影片偵測到 >= 3次5-4-0手勢，表示此人高機率在密集求助，需注意！
 	- `Safe!`: 表示整部影片沒有偵測到任何一次5-4-0手勢，大致安全。
+	
 ---
 
 ### `app_for_testing.py`
