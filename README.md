@@ -11,35 +11,36 @@ pip install -r requirements.txt
 ```
 
 ## 檔案說明
-### app.py
-
+### `app.py`
 可使用前鏡頭或單一影片進行測試，在執行過程中會有視窗畫面，可以即時了解當前所辨認之手勢。
 
 ---
-### app_for_testing.py
+### `app_for_testing.py`
 一次對整個資料夾的影片進行測試，執行過程為了節省效能，不會有額外的視窗畫面。
 
+---
+### `test.py`
+使用整支影片所辨認出的個別手勢資訊（array of {5, 4, 0, N, X} ），判斷是否包含連續的5-4-0手勢。
+
+會被`app.py`及`app_for_testing.py`呼叫
 
 ---
-### test.py
-使用整支影片所判斷出的個別手勢資訊（array of 5, 4, 0, N, X），判斷是否包含連續的540手勢，會被app及app_for_test呼叫
-
----
-### 10_sec_yes
+### `10_sec_yes`
 作為Test data，內含40部長度10秒且有540手勢之影片。
 
 ---
-### 10_sec_no
+### `10_sec_no`
 作為Test data，內含40部長度10秒且沒有540手勢之影片。
 
 ---
 ### 其他Test data
 另有各40部長度30秒，分別有540手勢、沒有540手勢的影片。
+
 因檔案過大，所以不上傳至Repo，可至連結下載：[包含影片之Google Drive](https://drive.google.com/drive/folders/1g2w5Qxhu-ea007MQFYhMKN2DXqWD1VVc?usp=sharing)
 
 
 ## 使用方法
-### app.py
+### `app.py`
 範例:
 
 ```
@@ -54,7 +55,7 @@ python app.py --video_source ./video.mp4 --output_frame 5
 
 ---
 
-### app_for_testing.py
+### `app_for_testing.py`
 範例:
 
 ```
@@ -67,7 +68,7 @@ python app_for_testing.py --video_dir 10_sec_no
 
 
 ## 輸出
-### app.py
+### `app.py`
 範例1：
 ```
 hit1: Time of occurrence:2.5s spend time:2.5s
@@ -95,7 +96,7 @@ Result = N
 	- `Safe!`: 表示整部影片沒有偵測到任何一次5-4-0手勢，大致安全。
 ---
 
-### app_for_testing.py
+### `app_for_testing.py`
 範例：
 ```
 1: Filename = 11.mp4, Answer = N, Result = N   ========>  Correct
