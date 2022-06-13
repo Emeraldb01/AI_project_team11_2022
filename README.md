@@ -1,6 +1,17 @@
 
 # AI_project_team11_2022
 
+## Overview
+
+「5-4-0手勢」起源於新冠肺炎時期，居家隔離致使家庭暴力事件攀升，為了讓受害者能夠無聲地尋求協助，而發明出來的手勢。
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Signal_for_Help_gestures.png/2560px-Signal_for_Help_gestures.png" width="600">
+
+
+此Project的任務便是以能夠辨認單一手勢的Model，配合自行設計之演算法，來在給定的一段影片中，自動偵測是否有5-4-0手勢出現。
+
+網路上的海量影片中，若這些求助訊號能夠更容易的被過濾出來，就能及早發現受害者。後續交由專人介入處理後，便能夠帶他們脫離困境。
+
 ## Requirements
 
 Python版本：3.9.13
