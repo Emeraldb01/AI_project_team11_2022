@@ -5,7 +5,7 @@
 
 「5-4-0手勢」起源於新冠肺炎時期，居家隔離致使家庭暴力事件攀升，為了讓受害者能夠無聲地尋求協助，而發明出來的手勢。
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Signal_for_Help_gestures.png/2560px-Signal_for_Help_gestures.png" width="600">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Signal_for_Help_gestures.png/2560px-Signal_for_Help_gestures.png">
 
 
 此Project的任務便是以能夠辨認單一手勢的Model，配合自行設計之演算法，來在給定的一段影片中，自動偵測是否有5-4-0手勢出現。
